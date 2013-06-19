@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    {% if page.title %}
+    <title>{{ page.title }} | {{ site.title }}</title>
+    {% else %}
+    <title>{{ site.title }}</title>
+    {% endif %}
+    
+    
+    <link rel="stylesheet" id="default-css" href="{{ ASSET_PATH }}/css/style.css" type="text/css" media="all" />
+
+    <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.cycle.all.js"></script>
+    <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery-ui.custom.min.js"></script>
+    <link rel="stylesheet" href="{{ ASSET_PATH }}/css/flick/jquery-ui.custom.css" type="text/css" />
+
+    
+   <script src="{{ ASSET_PATH }}/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script> 
+	 <script type="text/javascript">
+	$.fn.tagcloud.defaults = {
+		size: {start: 12, end: 22, unit: 'px'},
+		  color: {start: '#7CCD7C', end: '#CD0000'}
+	};
+
+	$(function () {
+		$('#tag_cloud a').tagcloud();
+	});
+	</script>
+	<style type="text/css">
+        .head-img .tagline { display:none; }
+        .head-img img { width: 950px; border-radius: 8px; }
+	</style>
+	
+	<!-- Highlight support -->
+    <link href="{{ ASSET_PATH }}/css/highlight.css" rel="stylesheet">
+    
+    <!-- MathJax support -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          }
+        });
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript"
+       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+    <!-- Google Custom Search -->
+
+   <script>
+  (function() {
+    var cx = '007891590632547923134:gbll_dxkudo';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+     
+
+   
+   <!-- Slideshow -->
+   <script type="text/javascript" charset="utf-8">/*<![CDATA[*/ 
+    jQuery(document).ready(function() {
+        jQuery(".slideshow").cycle({
+          fx: "fade",
+          timeout: 6000,
+          pager: "#slideshow-nav",
+          speed: 1000,
+          pagerEvent: "click",
+          pauseOnPagerHover: true,
+          cleartypeNoBg: true });
+      });
+   /*]]>*/</script> 
+    
+  </head>
+
+<body>
+  <div class="content-pad">
+
+    <div id="header">
+        <div class="header-inner">
+          <div class="title-wrapper">
+            <h1><a href="{{ HOME_PATH }}">{{ site.title }}</a></h1>
+          </div>
+          
+           <div class="descriptionwrapper">
+              <p class="description"><span>{{ site.tagline }}</span></p>
+           </div>
+           
+        </div>
+        
+      <div class="subnav">
+        <ul class="nav nav-pills">
+          <li class=""><a href="{{ HOME_PATH }}">主页</a></li>
+          <li class=""><a href="{{ BASE_PATH }}/archive.html">博客归档</a></li>
+          <li class=""><a href="{{ BASE_PATH }}/2011/11/data-science.html">什么是数据科学</a></li>
+          <li class=""><a href="{{ BASE_PATH }}/2013/01/blog-post.html">如何学习数据科学</a></li>
+          <li class=""><a href="{{ BASE_PATH }}/2013/02/r.html/">我最喜欢的12本R书</a></li>
+          <li class=""><a href="{{ BASE_PATH }}/about.html">关于我</a></li>
+          <li class=""><a href="{{ BASE_PATH }}/guest.html">请我吃饭</a></li>
+          <li class=""><a href="{{ BASE_PATH }}/atom.xml">订阅</a></li>
+        </ul>
+      </div>
+    
+    </div>
+    
+    <div id="main">		
+	  <div class="columns">	
+        <div class="narrowcolumn singlepage no">
+          {{ content }}
+	    </div><!-- END Narrowcolumn -->
+
+        <div id="sidebar" class="no">
+          <ul>
+            <li id="widget_search" class="widget">
+              <gcse:searchbox-only></gcse:searchbox-only>
+              <div style="clear:both;"></div>
+            </li> 
+            
+            <li id="widget_categories" class="widget">
+              <h2 class="blocktitle"><span>标签</span></h2>
+               <div id="tag_cloud">
+               {% for category in site.categories %}
+               <a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category[0] }}-ref" title="{{ category[0] }}" rel="{{ category[1].size }}">{{ category[0] }}&nbsp;</a>
+	{% endfor %}</div>		       
+            </li>
+            
+             <li id="RSS" class="widget">
+              <h2 class="blocktitle">订阅</h2>
+              <ul>
+                <li class="cat-item rss-item"><a href="{{ BASE_PATH }}/atom.xml">所有文章</a></li>
+                <li class="cat-item rss-item"><a href="http://joyfulhomecn.disqus.com/latest.rss">所有评论</a></li>
+              </ul>
+            </li>
+            
+
+            <li id="linkcat-1" class="widget">
+              <h2 class="blocktitle"><span>友情链接</span></h2>
+                <ul>
+                  <li><a href="http://yihui.name/">谢益辉</a></li>
+                  <li><a href="http://www.bjt.name/">刘思喆</a></li>
+                  <li><a href="http://yanping.me/">雁起平沙</a></li>
+                  <li><a href="http://yixuan.cos.name/">小轩哥</a></li>
+                  <li><a href="http://blog.cos.name/fan/">范建宁</a></li>
+                  <li><a href="http://blog.cos.name/taiyun/">魏太云</a></li>
+                  <li><a href="http://www.loyhome.com/">落园</a></li>
+                  <li><a href="http://www.road2stat.com/">肖楠</a></li>
+                  <li><a href="http://www.gaotao.name/">高涛</a></li>
+                </ul>
+            </li>
+            
+            <li id="linkcat-2" class="widget">
+              <h2 class="blocktitle"><span>有用的链接</span></h2>
+              <ul>
+                <li><a href="http://www.r-project.org/">R语言官方站</a>官方</li>
+                <li><a href="http://www.rseek.org/">R语言搜索引擎</a></li>
+                <li><a href="http://flowingdata.com/">数据可视化</a></li>
+                <li><a href="http://bbs.pinggu.org/forum-69-1.html">人大经济论坛</a></li>
+                <li><a href="http://cos.name/cn/forum/15">统计之都</a></li>
+                <li><a href="http://www.kdnuggets.com/index.html?lg">Kdnuggets</a></li>
+                <li><a href="https://sites.google.com/site/dataminingresearchnotes/wiki">Wiki about datamining</a></li>
+                <li><a href="http://datamarket.com/">datamarket</a></li>
+                <li><a href="http://www.rdatamining.com/">rdatamining</a></li>
+                <li><a href="http://www.r-bloggers.com/">R-bloggers</a></li>
+                <li><a href="http://www.statmethods.net/index.html">Quick R</a></li>
+              </ul>
+          </li>
+            
+          </ul>
+        </div><!-- END sidebar -->
+
+        <div class="clear"></div>
+        
+        <div id="footer">
+          <div class="lt">
+            版权所有 © 2013 xccds | 由 <a href="http://jekyllbootstrap.com/" title="Jekyll Bootstrap" rel="copyright">Jekyll Bootstrap</a> 和 <a href="http://pages.github.com/" title="GitHub Pages" rel="copyright">GitHub Pages</a> 构建
+          </div>
+
+         <div class="rt">主题由<a href="http://yanping.me" title="雁起平沙" target="_blank">ypchen</a>和<a href="http://yixuan.cos.name" title="邱怡轩" target="_blank">yixuan</a>修改自 <a href="http://wordpress.org/extend/themes/delicate" title="delicate" rel="copyright">delicate</a> <a href="http://www.nattywp.com/" title="NattyWP"><img src="{{ ASSET_PATH }}/images/natty-logo.png" width="82" height="17" valign="3px" class="png" alt="NattyWP" align="middle"></a>
+</div> 
+          
+          <div class="clear"></div>
+        </div><!-- END footer -->
+
+      </div> <!-- END Columns --> 
+    </div><!-- END main -->
+  </div><!-- END content-pad -->
+  
+  <div class="clear"></div>
+    
+</body>
+</html>

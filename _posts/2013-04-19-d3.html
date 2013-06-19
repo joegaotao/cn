@@ -1,0 +1,11 @@
+--- 
+layout: post
+name: d3
+title: "\xE5\x88\x9D\xE5\xAD\xA6D3\xE7\x9A\x84\xE6\x84\x9F\xE8\xA7\x89"
+date: 2013-04-19 16:01:00 +08:00
+categories: 
+- "\xE5\x8F\xAF\xE8\xA7\x86\xE5\x8C\x96"
+- D3
+permalink: /2013/04/d3.html
+---
+<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://dl.dropboxusercontent.com/u/6547489/blog/images.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-Hq5341xxQ5w/UXD5EEKZ7rI/AAAAAAAABag/WzWWn7Z8Eeg/s1600/images.jpg" /></a></div>简单来讲有如下三点感受：<br /><br /><ul><li>D3很强大</li><li>D3并不容易学</li><li>学会D3并不等于学会了可视化</li></ul><br />一山还有一山高，在翻过ggplot2这座山后，发现还有D3这座珠穆朗玛。ggplot2已经非常好了。能够实现The Grammar of Graphics的精义，有很丰富的对象和灵活的自由度，但这都还不够，因为ggplot2只能够生成静态的图形。如果你只需要写一篇分析报告，那么ggplot2是足够的。但如果你想让数据在网页上飞翔，就需要D3做为翅膀。<br /><br /><br /><a name='more'></a>D3和ggplot2的共同点在于都可以实现数据到图形元素的映射，但D3更为底层一些。它的优点在于：<br /><br /><ul><li>用D3进行可视化，你只需要一个浏览器＋编辑器就可以完成工作，并不需要其它环境，也便于分享。</li><li>灵活性强，它可以很好的利用现有的web技术 HTML, CSS, SVG，操纵页面的任何一个对象，和数据绑定，无中生有的生成svg元素，进而由浏览器渲染成图形。</li><li>它也能利用现有浏览器上可以实现的js函数，实现和用户的即时交互。</li><li>此外，大量的文档和案例提供了很好的学习资源。</li></ul><br />底层也意味着用它来绘图不是一蹴而就的事情。D3并不是一个图表库，例如它没有任何一个函数可以直接画出箱线图出来。它只是javaScript的一个函数库，你需要考虑到各个方面，操很多心，费很多步骤才能画出一个简单的图形。当然现在已经有了很多基于D3的库，例如xCharts/NVD3/Vega，在R里面也有clickme包可以将数据直接转为D3。不过对于D3，知道的越多越好，例如HTML,CSS,SVG,DOM,JavaScript。<br /><br />可以这样来描述一下D3的特点：D3是一个组装生产线，这个生产线首先要放在一个车间里面，这个车间就是HTML。其次生产线上要有元件进来用以组装，有两种主要元件分别是数据和svg元素，D3首先读取json,csv,tsv格式文件，然后将数据和body内的svg元素属性绑定，组装的结果是一个新的HTML页面，最后的任务就是交给浏览器去展现数据特征。而D3这个生产线应该如何运转，则依赖于工程师头脑中的生产工艺或方法。<br /><br />D3是一种可视化的工具，它本身并不能告诉你如何实现一个优秀的可视化。正如同拿着青釭剑的夏侯恩，并不能击败常山赵子龙。学会了D3，只是学会了将数据摆放到屏幕上，但什么样的摆放方式才是美的，有效的。这还需要更多可视化的理论学习和实践。<br /><br />数据可视化本身不是目的，目的在于传送数据中隐藏的信息。人类不善于直接解读数据。但人类的视觉系统善于阅读图形，并从中搜寻模式。可视化就是将数据编码成图形，再由其它人读取图形，解码信息。这种可视化实际上是一种对已知数据进行解释性可视化的过程，一种讲故事的方式，这种情况下用D3是很适合的。而另一种探索性可视化，是对未知数据的描述，讲故事的人本身不晓得数据中有什么玄机，此时用D3就不大合适了，而应该换用快速的绘图工具。不过总而言之，学习D3是值得的，正如同学习R一样，谢益辉曾说：使用R将迫使你深入的理解统计，而使用D3也有同样的效果，使D3它将迫使你成为真正的可视化大师。<br /><br />正所谓：内修于心，外显于形。<br /><br />其它：<br />学习D3的预备资料：<br />http://www.w3school.com.cn/<br />www.codecademy.com<br />学习D3的几种入门材料：<br />http://code.hazzens.com/d3tut/lesson_0.html<br />http://www.dashingd3js.com/table-of-contents<br />http://ofps.oreilly.com/titles/9781449339739/

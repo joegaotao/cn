@@ -1,0 +1,41 @@
+---
+layout: index
+---
+{% include JB/setup %}
+
+{% for post in paginator.posts  %}
+<div class="post">
+  <div class="title">
+    <h2><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
+    {% if post.date %}
+    <small>{{ post.date | date: "%Y 年 %m 月 %d 日" }} | 标签：
+    {% else %}
+    <small>某年 某月 某日 | 标签：
+    {% endif %}
+    {% for category in post.categories %}
+    <a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category }}-ref" title="{{ category }}" rel="category">{{ category }}</a>{% unless forloop.last %}，{% endunless %}
+    {% endfor %}
+    </small>
+  </div><!-- END title -->
+  <div class="entry">
+    {{ post.content | split: '<!-- more -->' | first }}
+    <div class="clear"></div>
+  </div><!-- END entry -->
+  <p><a href="{{ BASE_PATH }}{{ post.url }}">阅读全文→</a></p>
+</div><!-- END post -->
+<div class="deco-line"></div>
+{% endfor %}
+
+<div class="paging">
+		{% if paginator.next_page %}
+			<a class="prev" href="{{ BASE_PATH }}/page{{paginator.next_page}}">&larr; 前一页</a>
+		{% endif %}
+				<a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">所有文章</a>
+		{% if paginator.previous_page %}
+			{% if paginator.page == 2 %}
+				<a class="next" href="{{ BASE_PATH }}/">后一页 &rarr;</a>
+			{% else %}
+				<a class="next" href="{{ BASE_PATH }}/page{{paginator.previous_page}}">后一页 &rarr;</a>
+			{% endif %}
+		{% endif %}
+</div>
