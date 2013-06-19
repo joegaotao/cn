@@ -59,7 +59,7 @@ JB :
   #   - When setting BASE_PATH it must be a valid url.
   #     This means always setting the protocol (http|https) or prefixing with "/"
   #BASE_PATH : http://xccds.github.io
-  BASE_PATH : http://joegaotao.github.io
+  BASE_PATH : /cn
   #BASE_PATH : false
 
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
