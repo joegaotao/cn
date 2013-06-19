@@ -12,12 +12,12 @@ paginate: 5
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : 数据科学与R语言
-tagline: Data Science and R
+title : 统计边，生活处
+tagline: statistics and life
 author :
-  name : xccds
-  email : xccds1977@gmail.com
-  github : xccds
+  name : gaotao
+  email : joegaotao
+  github : joegaotao
   twitter : username
   feedburner : feedname
 
@@ -29,7 +29,7 @@ author :
 # Else if you are pushing to username.github.com, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://xccds.github.io
+production_url : http://joegaotao.github.io
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -59,7 +59,7 @@ JB :
   #   - When setting BASE_PATH it must be a valid url.
   #     This means always setting the protocol (http|https) or prefixing with "/"
   #BASE_PATH : http://xccds.github.io
-  BASE_PATH : http://xccds.github.io
+  BASE_PATH : http://joegaotao.github.io
   #BASE_PATH : false
 
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
