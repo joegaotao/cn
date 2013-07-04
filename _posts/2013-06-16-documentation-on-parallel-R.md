@@ -3,7 +3,7 @@ date: '2013-06-16 10:45:40'
 layout: post
 title: R并行计算的相关资料
 categories:
-- 学习中
+- 学习
 - R
 tags:
 - R
