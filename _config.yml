@@ -13,10 +13,10 @@ paginate: 5
 # so be sure to set them if your theme uses them.
 #
 title : 统计边，生活处
-tagline: statistics and life
+tagline: Statistics and Life
 author :
   name : gaotao
-  email : joegaotao
+  email : joegaotao@gmail.com
   github : joegaotao
   twitter : username
   feedburner : feedname
