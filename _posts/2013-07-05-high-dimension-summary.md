@@ -1,5 +1,5 @@
 ---
-date: '2013-07-5 13:55:40'
+date: '2013-07-05 13:55:40'
 layout: post
 title: 高维变量选择问题的一点总结
 categories:
