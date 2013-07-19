@@ -43,17 +43,19 @@ $$\text{(signal strength)^2} \varpropto n \varpropto \text{dollars or manpower}$
 Jiashun老师从FDR的弱点出发引出了自己的思路。
 
 对于简单的问题
+
 $$Y_i = \mu_i + \sigma z_i, \quad z_i \overset{iid}{\sim} N(0, 1), \quad i = 1, 2, \ldots, p$$
+
 如果只有很少量的信号$\mu_i$不为0，挑选信号的一个直接的方法就是用Wavelet hard-thresholding，给出一个阈值
 
-\begin{equation*}
+\[
 \hat{\mu}_i^H = \left \{
 \begin{array}{lc}
 y_i, & |y_i| \geq \sigma \cdot t \\
 0, & \text{otherwise}
 \end{array}
 \right.
-\end{equation*}
+\]
 
 这个时候选择阈值$t$就是一个艺术化的工作，选大了会导致很多信号选不到，选小了就会导致很多噪音进来。一种选择阈值的方法即通过控制FDR水平（错误发现率），通俗的说，如果能使得选出来的信号中是假信号（噪音）的比例控制在一定水平之下，这样我们也是可以接受的，毕竟真信号还是选出来了，只是附带了一部分噪音罢了。想法是好的，但是实际中，用FDR控制阈值很可能选不到任何信号，因为我们期望FDR能有效果是基于一个信念：信号虽然稀疏，但是还是**强（strong）**的，所以我们也许还是可以找到个相对好的阈值$t$来找到强信号。但是现实中如果信号是弱的，信噪比比较高时，用FDR报告出来的信号便很可能是假的，因此控制FDR还是无法到达选较好阈值的目的。按Jiashun老师的话说，FDR其实与阈值选择没有太大关系，两个不太一样的目标。
 
@@ -61,21 +63,21 @@ y_i, & |y_i| \geq \sigma \cdot t \\
 
 做如下假设检验：
 
-\begin{equation*}
+\[
 \begin{array}{lr}
 H_0 : X_1 \overset{iid}{\sim}N(0, 1), & 1 \leq i \leq p \\
 H_1^{(p)}: X_i \overset{iid}{\sim}(1 - \epsilon_p)N(0, 1) + \epsilon N(\tau_p, 1), & 1 \leq i \leq p
 \end{array}
-\end{equation*}
+\]
 
 原假设即各变量是噪音，备择假设是各变量是一种噪音与信号的混合。其中参数有如下形式
 
-\begin{equation*}
+\[
 \begin{array}{lc}
 \epsilon_p = p^{-\beta}, & 0.5 < \beta < 1 \\
 \tau_p = \sqrt{2r\log p}, & 0 < r < 1
 \end{array}
-\end{equation*}
+\]
 
 * 当$\epsilon_p$很小时，比如$\epsilon_p << 1/\sqrt{p}$时，意味着只有极少的非零均值，此参数刻画着信号稀疏性（$\beta$越大，$\tau_p$越小，信号越越稀疏）；
 * 当$\tau_p$比较小时，信号相对比较弱，此参数刻画着信号的强弱（$r$越大，信号越强）；一般$\tau_p < \sqrt{2 \log p}$时，信号就凑合能用了（only moderate significance）。
@@ -90,11 +92,11 @@ H_1^{(p)}: X_i \overset{iid}{\sim}(1 - \epsilon_p)N(0, 1) + \epsilon N(\tau_p, 1
 
 Higher Criticism，我直译为为高阶鉴别法，Jiashun老师说始于Tukey 1976年Stat 411课程讲义笔记，大师的思维光芒真是能穿越历史呀。Jiashun老师推导的HC与Tukey的略有不同，更为一般化，式子如下：
 
-\begin{equation*}
+\[
 HC^{*}_p = \max_{0 \leq \alpha \leq \alpha_0}\big\{
 \sqrt{p}\big[\frac{\text{fraction significant} at \alpha - \alpha}{\sqrt{\alpha(1 - \alpha)}}\big]
 \big\}
-\end{equation*}
+\]
 
 其中$\alpha_0$可以是1/2或1。一眼就可以看出来，这是一个比例估计的检验——分子是在控制$\alpha$水平时实际个体显著的比例与真实比例$\alpha$的差异；分母将$\sqrt{p}$拿到分母下就是比例$\alpha$的方差。那么这么做的含义是什么？
 
@@ -105,9 +107,17 @@ Jiashun老师说，HC值对强信号、弱信号检测都非常敏感，而FDR�
 Higher Cirticism实施比较简单，过程与FDR过程很类似。步骤如下：
 
 1. 对每个特征都算一个z-score，然后根据z-score算个p值，
-2. 对p值排序：$$\pi_{(1)} < \pi_{(2)} < \cdots < \pi_{(p)}$$
-3. 计算第$k$个HC值，也相当于算了一个z-score：$$HC_{p, k} = \sqrt{p}\big[\frac{\frac{k}{p}-\pi_{(k)}}{\sqrt{\pi_{(k)}(1 - \pi_{k})}}\big]$$
-4. 取最大值，计算相应的$HC^{*}_p$值，找到对应的$k$，前$k$可以认为是真显著的。$$HC^{*}_p = \max_{1 \leq i \leq \alpha_0\cdot p}\{HC_{p,i}\}$$
+2. 对p值排序：
+
+$$\pi_{(1)} < \pi_{(2)} < \cdots < \pi_{(p)}$$
+
+3. 计算第$k$个HC值，也相当于算了一个z-score：
+
+$$HC_{p, k} = \sqrt{p}\big[\frac{\frac{k}{p}-\pi_{(k)}}{\sqrt{\pi_{(k)}(1 - \pi_{k})}}\big]$$
+
+4. 取最大值，计算相应的$HC^{*}_p$值，找到对应的$k$，前$k$可以认为是真显著的。
+
+$$HC^{*}_p = \max_{1 \leq i \leq \alpha_0\cdot p}\{HC_{p,i}\}$$
 
 对应着下面的图形大约可以可以理解这个过程，横轴是实际比例$k/p$，目的就是找到一个阈值，可以帮助我们检测到信号。
 
