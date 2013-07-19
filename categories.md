@@ -1,6 +1,6 @@
 ---
 layout: page_no_comment
-title: 标签
+title: 分类
 header: Posts By Category
 group: no_navigation
 ---
