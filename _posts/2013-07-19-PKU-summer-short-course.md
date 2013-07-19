@@ -25,6 +25,8 @@ Zou Hui老师还提倡多做实验，多种方法多做比较，不要限制于�
 
 整个暑期课程对我思维激发最大的是Jiashun Jin老师的课程内容。由于课程进度有些快，加上这几天比较忙，我也没有研读老师paper，所以此处只是记录些大概想法，后面有时间会深入探讨。
 
+## Higher Criticism and Rare/Weak Signals 
+
 Jiashun老师讲关于稀疏、弱信号（rare/weak signals）共三节课，最核心的是Higher Criticism and rare/weak signals，然后还有就是关于变量选择的新思维。
 
 
@@ -44,14 +46,14 @@ Jiashun老师从FDR的弱点出发引出了自己的思路。
 $$Y_i = \mu_i + \sigma z_i, \quad z_i \overset{iid}{\sim} N(0, 1), \quad i = 1, 2, \ldots, p$$
 如果只有很少量的信号$\mu_i$不为0，挑选信号的一个直接的方法就是用Wavelet hard-thresholding，给出一个阈值
 
-$$
+\[
 \hat{\mu}_i^H = \left \{
 \begin{array}{lc}
 y_i, & |y_i| \geq \sigma \cdot t \\
 0, & \text{otherwise}
 \end{array}
 \right.
-$$
+\]
 
 这个时候选择阈值$t$就是一个艺术化的工作，选大了会导致很多信号选不到，选小了就会导致很多噪音进来。一种选择阈值的方法即通过控制FDR水平（错误发现率），通俗的说，如果能使得选出来的信号中是假信号（噪音）的比例控制在一定水平之下，这样我们也是可以接受的，毕竟真信号还是选出来了，只是附带了一部分噪音罢了。想法是好的，但是实际中，用FDR控制阈值很可能选不到任何信号，因为我们期望FDR能有效果是基于一个信念：信号虽然稀疏，但是还是**强（strong）**的，所以我们也许还是可以找到个相对好的阈值$t$来找到强信号。但是现实中如果信号是弱的，信噪比比较高时，用FDR报告出来的信号便很可能是假的，因此控制FDR还是无法到达选较好阈值的目的。按Jiashun老师的话说，FDR其实与阈值选择没有太大关系，两个不太一样的目标。
 
