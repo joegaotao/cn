@@ -1,7 +1,7 @@
 ---
 date: '2013-07-19'
 layout: post
-title: PKU暑期高维统计学习心得
+title: PKU暑期高维统计学习心得(I)
 categories:
 - 感想
 tags:
