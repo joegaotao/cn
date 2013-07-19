@@ -143,7 +143,7 @@
               <h2 class="blocktitle"><span>标签</span></h2>
                <div id="tag_cloud">
                {% for category in site.categories %}
-               <a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category[0] }}-ref" title="{{ category[0] }}" rel="{{ category[1].size }}">{{ category[0] }}&nbsp;</a>
+               <a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ category[0] }}-ref" title="{{ category[0] }}" rel="{{ category[1].size }}">{{ category[0] }}&nbsp;</a>
 	{% endfor %}</div>		       
             </li>
             
