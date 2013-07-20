@@ -81,7 +81,7 @@ $$
 \end{array}
 $$
 
-* 当 $\epsilon_p$ 很小时，比如 $\epsilon_p << 1/\sqrt{p}$ 时，意味着只有极少的非零均值，此参数刻画着信号稀疏性（ $\beta$ 越大，$\tau_p$ 越小，信号越越稀疏）；
+* 当 $\epsilon_p$ 很小时，比如 $\epsilon_p \ll 1/\sqrt{p}$ 时，意味着只有极少的非零均值，此参数刻画着信号稀疏性（ $\beta$ 越大，$\tau_p$ 越小，信号越越稀疏）；
 * 当 $\tau_p$ 比较小时，信号相对比较弱，此参数刻画着信号的强弱（$r$ 越大，信号越强）；一般 $\tau_p < \sqrt{2 \log p}$ 时，信号就凑合能用了（only moderate significance）。
 
 对于两个分布的检验（上述参数固定时候），Neyman-Pearson检验最优。那么自然我们就想通过似然比检验来刻画上述参数($\beta, r$)不同区间的检验效力了。于是就有了如下非常惊艳的有关信号检测的Phase Diagram
@@ -126,7 +126,7 @@ $$HC^{*}_p = \max_{1 \leq i \leq \alpha_0\cdot p}\{HC_{p,i}\}$$
 ![hc1](http://i.imgur.com/kGMsmoB.png)
 
 
-然后Jiashun老师给出了他在2004年和他导师Donoho的一篇论文的结果，证明了 $HC^{\ast}_p$ 有最优的适应性(adaptivity)，证明 $HC^{\ast}_p>\sqrt{4\log\log(p)}$ 时，可以获得犯第一类错误与第二类错误之和趋近于0。
+然后Jiashun老师给出了他在2004年和他导师Donoho的一篇论文的结果，证明了 $HC^{\ast}_p$ 有最优的适应性(adaptivity)，证明 $HC^{\ast}_p > \sqrt{4\log\log(p)}$ 时，可以获得犯第一类错误与第二类错误之和趋近于0。
 
 Higher Criticism在宇宙学、天文学、基因、异常检测中研究比较多，因为那里的信号比较稀疏和弱，常规的方法已经不能满足需求。另外，HC非常适用于高维的screening、signal detection、classification、clustering等方向，用HC来控制screening中的阈值，比常规的CV、FDR等方法提供了一个新的角度，并且简单有效，无需调参，理论性质也挺好。
 
