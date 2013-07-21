@@ -86,7 +86,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : datar
+      short_name : GaoTao
     livefyre :
       site_id : 123
     intensedebate :
