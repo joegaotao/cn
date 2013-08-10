@@ -4,6 +4,7 @@ layout: post
 title: PKU暑期高维统计学习心得(I)
 categories:
 - 感想
+- 统计理论
 tags:
 - PKU
 - 统计
