@@ -14,6 +14,7 @@ group: navigation
 
 记录与坚持，这是一个全新的开始。
 
+博客旧站请点击[此处](www.gaotao.name)
 
 ### 研究兴趣
 

@@ -1,5 +1,5 @@
 ---
-date: '2013-07-20'
+date: '2013-08-10'
 layout: post
 title: PKU暑期高维统计学习心得(II)
 categories:
