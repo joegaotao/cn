@@ -46,11 +46,11 @@ $$
 Y = X\beta = \sum_{\gamma}\beta_{\gamma}\phi_{\gamma}, \quad p = 2n, \quad X = [\Phi, \Psi]
 $$
 
-其中 $\Phi$ 和 $\Psi$ 分别是两组基。$[\Phi, \Psi] = [\underline{\phi_1, \phi_n}, \underline{\phi_{n+1}, \phi_{2n}}]$，此处令
+其中 $\Phi$ 和 $\Psi$ 分别是两组基。$[\Phi, \Psi] = [\underline{\phi_1, \ldots, \phi_n}, \underline{\phi_{n+1}, \ldots, \phi_{2n}}]$，此处令
 
 * $T \subset \{1, 2, \ldots, n\}$, 为“时域”，
 * $W \subset \{n+1, \ldots, 2n\}$, 为“频域”，
-* 要找到$\beta$非零的位置，且具有稀疏性 $|T| + |W|\ll n$
+* 要找到 $\beta$ 非零的位置，且具有稀疏性 $|T| + |W|\ll n$
 
 目标就是给定 $(X, Y)$，来恢复稀疏的 $\beta$，此时根据Occam's Razor的原则，我们相信真实的 $\beta$ 应该是最稀疏的。转化为具体形式就是 $\ell_0$ 惩罚，
 
