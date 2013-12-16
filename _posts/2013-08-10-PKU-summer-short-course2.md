@@ -47,7 +47,8 @@ $$
 Y = X\beta = \sum_{\gamma}\beta_{\gamma}\phi_{\gamma}, \quad p = 2n, \quad X = [\Phi, \Psi]
 $$
 
-其中 $\Phi$ 和 $\Psi$ 分别是两组基。$[\Phi, \Psi] = [\underline{\phi_1, \ldots, \phi_n}, \underline{\phi_{n+1}, \ldots, \phi_{2n}}]$，此处令
+其中 $\Phi$ 和 $\Psi$ 分别是两组基。
+$[\Phi, \Psi] = [\underline{\phi_1, \ldots, \phi_n}, \underline{\phi_{n+1}, \ldots, \phi_{2n}}]$，此处令
 
 - $T \subset \{1, 2, \ldots, n\}$, 为“时域”，
 - $W \subset \{n+1, \ldots, 2n\}$, 为“频域”，
@@ -159,7 +160,7 @@ UPS方法不是直接对X或Y做screening，而是对变化数据 $\tilde{Y} = X
 $$
 \begin{pmatrix}
 1 & h \\
-h & 1
+h & 1 \\ 
 \end{pmatrix}
 , \quad \|h\| < 1
 $$
