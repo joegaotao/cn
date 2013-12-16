@@ -51,12 +51,12 @@ $$
 
 - $T \subset \{1, 2, \ldots, n\}$, 为“时域”，
 - $W \subset \{n+1, \ldots, 2n\}$, 为“频域”，
-- 要找到 $\beta$ 非零的位置，且具有稀疏性 $\|T\| + \|W\| \ll n$
+- 要找到 $\beta$ 非零的位置，且具有稀疏性 $\\|T\\| + \\|W\\| \ll n$
 
 目标就是给定 $(X, Y)$，来恢复稀疏的 $\beta$，此时根据Occam's Razor的原则，我们相信真实的 $\beta$ 应该是最稀疏的。转化为具体形式就是 $\ell_0$ 惩罚，
 
 $$
-(P_0): \quad \min\|\beta\|_0, \quad \text{such that } Y = X\beta
+(P_0): \quad \min\|\beta\|_0, \quad \text{such that } \,\, Y = X\beta
 $$
 
 虽然基于Occam's Razor原则，那么 $\ell_0$ 的稀疏解是不是唯一的呢？答案是唯一的。之前的UP原则已经暗含了：**对于$Y = X\beta$，不可能同时存在多个稀疏解.**
@@ -72,7 +72,7 @@ $$
 直观理解，结合不确定原则，时域与频域上非零稀疏个数至少是 $2\sqrt{n}$个，结合UP的那个乘法与加法的不等式，稀疏可以定义为 
 
 $$
-|T| + |W| = 2\sqrt{n} \text{and} |T| = |W| = \sqrt{n}
+\|T\| + \|W\| = 2\sqrt{n} \quad \text{and} \quad \|T| = \|W\| = \sqrt{n}
 $$
 
 如果加上个两者之和最多少于 $\sqrt{n}$ 个，也就说明了时域、频域不能同时太稀疏，此时只有一个域上稀疏，那么这种恢复是唯一的。
