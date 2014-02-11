@@ -87,7 +87,7 @@ $$
 
 对于两个分布的检验（上述参数固定时候），Neyman-Pearson检验最优。那么自然我们就想通过似然比检验来刻画上述参数($\beta, r$)不同区间的检验效力了。于是就有了如下非常惊艳的有关信号检测的Phase Diagram
 
-![hc](http://i.imgur.com/a0iiwlU.png)
+![hc](https://1xlhga.bn1301.livefilestore.com/y2pYbzYr-kSidbDba1eluxy8DunNQ_Y35tLh0_5rAwa-8PlVJ5Gmy9vd1UUa1Syw-V5hcJkn2ESY86DcDzY-7679-JjHlX4xabIvyb8mO7LCCw/hc.png)
 
 此处划分了四个区域：可精确恢复（exact recovery）；几乎能全恢复（almost full recovery）；可检测的（detectable）；不可检测的（undetectable）。这些都是概率的语言，表示的概率强度不同。横坐标 $\beta$ 越大表示信号越稀疏，纵坐标 $r$ 越大表示信号越强。很多理论的结论都是在 $r > 1$ 时的结论，也就是信号很强的时候咋算都会又不错的估计效果。右图是将横纵坐标都限制在 $(0, 1)$ 区间中，而这一块也正是我们感兴趣的地方，信号稀疏而且很弱的时候估计效果如何？经过一些与检验相关的计算，这些曲线是可以直接算出来的，可以刻画可检测、不可检测、可估计的区域范围。
 
@@ -124,7 +124,7 @@ $$HC^{*}_p = \max_{1 \leq i \leq \alpha_0\cdot p}\{HC_{p,i}\}$$
 
 对应着下面的图形大约可以可以理解这个过程，横轴是实际比例 $k/p$，目的就是找到一个阈值，可以帮助我们检测到信号。
 
-![hc1](http://i.imgur.com/kGMsmoB.png)
+![hc1](https://coewfg.bn1.livefilestore.com/y2pN-hZ9-2-eFyGtH5gUpZpi-7bjTCDl2shJV1-ws_oD1sjU776kewcodhpPfZgrA3ubCQLN1CbtU61YkjwhgjVf-6ydMrWI7As6kJ8zACVZvg/hc1.png)
 
 
 然后Jiashun老师给出了他在2004年和他导师Donoho的一篇论文的结果，证明了 $HC^{\ast}_p$ 有最优的适应性(adaptivity)，证明 $HC^{\ast}_p > \sqrt{4\log\log(p)}$ 时，可以获得犯第一类错误与第二类错误之和趋近于0。
