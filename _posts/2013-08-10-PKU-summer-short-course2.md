@@ -100,7 +100,7 @@ $$
 
 首先我们阐述Occam's razor对于稀疏弱信号尝试是不太合适的。Jiashun老师给出了一个图形很好的阐述所存在的问题：
 
-![occam](http://www.flickr.com/photos/45187658@N03/9478935170/)
+![occam](https://coewfg.bn1304.livefilestore.com/y2pJwAnVbzr8XIs8oUe_pXl8ZHQcTe14nbBTJbJomH6KNpeOltqGUkwPAA9Hs4RSHIMVztgv956EStG6J8xZ0l-6sPU6GaUk2yRIjOV4QMsveM/occam.png)
 
 从图中可以看到，如果没有噪音，或者噪音比较小时，恢复较大的真实的信号是很好的，不过当信号很弱，信噪比比较高时候，那么这些真实信号就会被一些噪音包围，而我们也无法分辨出来。用Occam's razor去挑选最简单的，显然效果会比较差。
 
@@ -172,7 +172,7 @@ $$
 * Innovated后HC：$[1/(1 - h^2)]\tau$。
 可以看到变换后，Whitening  和InnovatedSNR 都增加了，但是 Innovated 的增加的更多。用图形来阐述就是下图，左图是原始信号，而右边是经过变换后的信号，原弱信号增强了，当然边上的噪音也会有些增加了。
 
-![innovated](http://www.flickr.com/photos/45187658@N03/9478935194/)
+![innovated](https://1xloxw.bn1304.livefilestore.com/y2pR8wojOtsWfBdyn7R_U3IM4yKTWmraFbWvktLKhGFTDUroalL1TzrTSLqrGsfkizxIeZoMSD_6g7u0BAYb3xdm6yDM01dfs6z3oJjTaSmxMU/SNR.png)
 
 这种 Innovated HC 与 UPS 方法的联系在于 $X$ 是随机阵时，有一个完美的随机阵版本（Stein's normal means model）$X \overset{i.i.d}{\sim} (0, \frac{1}{n}\Omega)$, 而Stein正态均值模型有 $W \sim N(\beta, \Sigma)$，其中 $\Sigma = \Omega^{-1}$，于是乎 $X'Y = X'X\beta + X'z$，而 $X'X\beta \approx \Omega\beta$ 和 $X'z \approx N(0, \Omega)$，于是 $X'Y \approx N(\Omega\beta, \Omega)$，即Innovated HC。所以UPS方法做Screening会保证一些较好的性质，如Sure Screening（信号基本都在筛选出来的信号中），Separation After screening(SAS)（存留的信号满足GOSD，可以拆分多个不相连的子块）。
 
