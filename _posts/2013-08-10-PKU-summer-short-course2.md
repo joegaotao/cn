@@ -48,7 +48,7 @@ Y = X\beta = \sum_{\gamma}\beta_{\gamma}\phi_{\gamma}, \quad p = 2n, \quad X = [
 $$
 
 其中 $\Phi$ 和 $\Psi$ 分别是两组基。
-$[\Phi, \Psi] = [\underline{\phi_1, \ldots, \phi_n}, \underline{\phi_{n+1}, \ldots, \phi_{2n}}]$，此处令
+$$[\Phi, \Psi] = [\underline{\phi_1, \ldots, \phi_n}, \underline{\phi_{n+1}, \ldots, \phi_{2n}}]$$，此处令
 
 - $T \subset \{1, 2, \ldots, n\}$, 为“时域”，
 - $W \subset \{n+1, \ldots, 2n\}$, 为“频域”，
