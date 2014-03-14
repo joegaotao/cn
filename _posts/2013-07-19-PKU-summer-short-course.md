@@ -124,8 +124,7 @@ $$HC^{*}_p = \max_{1 \leq i \leq \alpha_0\cdot p}\{HC_{p,i}\}$$
 
 对应着下面的图形大约可以可以理解这个过程，横轴是实际比例 $k/p$，目的就是找到一个阈值，可以帮助我们检测到信号。
 
-![hc1](https://coewfg.bn1.livefilestore.com/y2pN-hZ9-2-eFyGtH5gUpZpi-7bjTCDl2shJV1-ws_oD1sjU776kewcodhpPfZgrA3ubCQLN1CbtU61YkjwhgjVf-6ydMrWI7As6kJ8zACVZvg/hc1.png)
-
+![hc1](https://1xisda.bn1302.livefilestore.com/y2p3dEywCYLZ4Hy1Rhs8uoicppH9hvrwVBdCUUOcFudDC67x1_Y-uzdxE-EVvZkhs3IxHnNAmVVFJ42GbdN9vhRIl_7J4uUxIysP9Ctt9AtePI/hc1.png)
 
 然后Jiashun老师给出了他在2004年和他导师Donoho的一篇论文的结果，证明了 $HC^{\ast}_p$ 有最优的适应性(adaptivity)，证明 $HC^{\ast}_p > \sqrt{4\log\log(p)}$ 时，可以获得犯第一类错误与第二类错误之和趋近于0。
 

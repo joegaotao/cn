@@ -100,7 +100,7 @@ $$
 
 首先我们阐述Occam's razor对于稀疏弱信号尝试是不太合适的。Jiashun老师给出了一个图形很好的阐述所存在的问题：
 
-![occam](https://coewfg.bn1304.livefilestore.com/y2pJwAnVbzr8XIs8oUe_pXl8ZHQcTe14nbBTJbJomH6KNpeOltqGUkwPAA9Hs4RSHIMVztgv956EStG6J8xZ0l-6sPU6GaUk2yRIjOV4QMsveM/occam.png)
+![occam](https://1xkrlw.bn1301.livefilestore.com/y2pfonBhhZDcNwe2c8N8kdiKFMCOvjY7k1McuLh-SRVgEk-oV9KN9HIi0jQ7OABSNI-XN9jUEeDNVOIcCOpwzlYKP9bYs6jcfdgnytqvBp2p2c/occam.png)
 
 从图中可以看到，如果没有噪音，或者噪音比较小时，恢复较大的真实的信号是很好的，不过当信号很弱，信噪比比较高时候，那么这些真实信号就会被一些噪音包围，而我们也无法分辨出来。用Occam's razor去挑选最简单的，显然效果会比较差。
 
