@@ -14,7 +14,7 @@ group: navigation
 
 记录与坚持，这是一个全新的开始。
 
-博客旧站请点击[此处](http://www.gaotao.name/cn/)
+博客旧站请点击[此处](http://www.gaotao.name/cn/)，带头像的自我简介首页请点击[此处](http://joegaotao.github.io/)。
 
 ### 研究兴趣
 
@@ -22,6 +22,7 @@ group: navigation
 
 ### 联系方式
 
+* 高涛：中国人民大学2012级统计学院研究生
 * E-mail: joegaotao@gmail.com
 * 新浪微博: [@三水成海](http://weibo.com/u/1869812215)
 
